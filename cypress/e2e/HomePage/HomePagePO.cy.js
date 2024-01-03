@@ -45,6 +45,15 @@ class HomePagePO {
     adContentLink() { return cy.get('.home-ad-click');}
     adContentImage() { return cy.get('img[src="/assets/img/rvshare-1170x250.jpg"]');}
 
+    //popular campgrounds for fall getaways
+    campgroundsForFallTitle() { return cy.get('section:nth-child(5) h2:nth-child(1)');}
+    wildFoxCabins() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1) > div:nth-child(2) > div:nth-child(1)');}
+    wildFoxCabinsLocation() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1) > div:nth-child(2) > div:nth-child(2)');}
+    wildFoxCabinsImage() { return cy.get('img[src="/assets/img/wild-fox-cabins-campground.jpg"]');}
+    yogiBears() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(2) > a:nth-child(1) > div:nth-child(2) > div:nth-child(1)');}
+    yogiBearsLocation() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(2) > a:nth-child(1) > div:nth-child(2) > div:nth-child(2)');}
+    yogiBearsImage() { return cy.get('img[src="/assets/img/jellystone-gardiner.jpg"]');}
+
 
 }
 

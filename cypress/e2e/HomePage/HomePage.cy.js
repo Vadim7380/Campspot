@@ -70,6 +70,14 @@ describe ('Home Page', ()=>{
       page.adContentLink().should('have.attr', 'href').and('include', 'https://clicks-partners.rvshare.com');
       page.adContentImage().should('be.visible');
 
+      //popular campgrounds for fall getaways
+      page.campgroundsForFallTitle().should('be.visible');
+      page.wildFoxCabins().should('be.visible');
+      page.wildFoxCabinsLocation().should('be.visible');
+      page.wildFoxCabinsImage().should('be.visible');
+      page.yogiBears().should('be.visible');
+      page.yogiBearsLocation().should('be.visible');
+      page.yogiBearsImage().should('be.visible');
 
       
 
