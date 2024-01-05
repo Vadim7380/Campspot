@@ -54,6 +54,36 @@ class HomePagePO {
     yogiBearsLocation() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(2) > a:nth-child(1) > div:nth-child(2) > div:nth-child(2)');}
     yogiBearsImage() { return cy.get('img[src="/assets/img/jellystone-gardiner.jpg"]');}
 
+    //sign in menu
+
+    signInTitle() { return cy.get('.sign-in-title');};
+    emailLink()   { return cy.get('.header-nav-link-email.app-global-header-nav-link-email');}
+    signOut()  { return cy.get('.app-sign-out-nav-link');}
+    accountDetails()  { return cy.get('.header-nav-account-dropdown-item.app-account-details-nav-link');}
+    paymentMethods()  { return cy.get('.header-nav-account-dropdown-item.app-payment-methods-nav-link');}
+    reservations()   { return cy.get('.header-nav-account-dropdown-item.app-payment-methods-nav-link');}
+    saved()  { return cy.get('.header-nav-account-dropdown-item.app-saved-nav-link');}
+    signInModalCloseIcon() { return cy.get('.account-modal-close-icon');};
+
+    //create account
+    createAccountTitle()  { return cy.get('.create-account-title');}
+    emailAddressTitle()  { return cy.get("label[for='create-account-email']");}
+    emailAddressValue()  { return cy.get('#create-account-email');}
+    passwordTitle()  { return cy.get("label[for='sign-up-password']");}
+    passwordValue()  { return cy.get('#sign-up-password');}
+    createAccountButton() { return cy.get("button[type='submit'] div");}
+    createAccountAgree()  { return cy.get('.create-account-agree');};
+    termsAndConditions()  { return cy.get('.create-account-agree > [href="/about/terms-and-conditions"]');};
+    privacyPolicy()  { return cy.get('.create-account-agree > [href="/about/privacy"]');};
+    facebookButton() { return cy.get('.create-account-social > :nth-child(1)');};
+    googleButton() { return cy.get('.create-account-social > :nth-child(2)');};
+    appleButton() { return cy.get('.create-account-social > :nth-child(3)');};
+    alreadyHaveAnAccount() { return cy.get('.create-account-sign-in');};
+    createAccountSignIn() { return cy.get('.create-account-sign-in-link.app-sign-in-link');};
+    
+    
+
+
 
 }
 

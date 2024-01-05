@@ -1,11 +1,18 @@
 {
   "name": "camp_spot_cypress_project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cypress.io automation suites for the Campspot",
   "main": "index.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vadim7380/Campspot.git"
+
+  },
+
   "author": "Vadym Prykhodko",
   "license": "ISC",
   "dependencies": {

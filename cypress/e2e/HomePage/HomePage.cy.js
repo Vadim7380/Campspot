@@ -3,10 +3,16 @@ import HomePagePO from './HomePagePO.cy.js';
 describe ('Home Page', ()=>{
    
     const page = new HomePagePO();
+    const User = Cypress.env ('User');
+    const Password = Cypress.env ('Password');
 
     beforeEach('Page Open', ()=>{
 
-        cy.visit('https://www.campspot.com/');
+        cy.visit('');
+        // page.signIn().click();
+        // cy.login(User, Password);
+        // cy.get('.header-nav-link-email').should('contain', 'prikhodkovn@gmail.com')
+        
     })
 
     it ('list view should contain correct element', ()=>{
@@ -79,12 +85,59 @@ describe ('Home Page', ()=>{
       page.yogiBearsLocation().should('be.visible');
       page.yogiBearsImage().should('be.visible');
 
-      
+      //to be continued......
+
+  
+    })
+
+    it('Sign in menu', ()=>{
+
+      page.signIn().click();
 
 
 
+      cy.login(User, Password);
+      page.emailLink().should('contain', 'prikhodkovn@gmail.com');
+      page.emailLink().click();
+      page.accountDetails().should('be.visible');
+      page.paymentMethods().should('be.visible');
+      page.reservations().should('be.visible');
+      page.saved().should('be.visible');
+      page.signOut().should('be.visible');
+      page.signOut().click();
 
 
+    })
+
+    it('Create account', ()=>{
+
+      page.createAccount().click();
+      page.createAccountTitle().should('be.visible');
+      page.emailAddressTitle().should('be.visible');
+      page.emailAddressValue().should('be.visible');
+      page.passwordTitle().should('be.visible');
+      page.passwordValue().should('be.visible');
+      page.createAccountButton().should('be.visible');
+      page.createAccountAgree().should('be.visible');
+      page.createAccountAgree().should('contain', 'By creating an account')
+      page.termsAndConditions().should('be.visible');
+      page.termsAndConditions().invoke('removeAttr', 'target').click()
+      cy.url().should('include', '/about/terms-and-conditions');
+      cy.go('back');
+      page.createAccount().click();
+      page.privacyPolicy().should('be.visible');
+      page.privacyPolicy().invoke('removeAttr', 'target').click()
+      cy.url().should('include', '/about/privacy');
+      cy.go('back');
+      page.createAccount().click();
+      page.facebookButton().should('be.visible');
+      page.googleButton().should('be.visible');
+      page.appleButton().should('be.visible');
+      page.alreadyHaveAnAccount().should('be.visible');
+      page.createAccountSignIn().should('be.visible');
+      page.createAccountSignIn().click();
+      page.signInTitle().should('be.visible');
+      page.signInModalCloseIcon().click();
 
     })
 
