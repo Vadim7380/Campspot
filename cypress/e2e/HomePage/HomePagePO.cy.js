@@ -20,14 +20,14 @@ class HomePagePO {
     guestsValue() { return cy.get('.guests-picker-input-text');}
     searchButton() { return cy.get('.home-hero-search-form-submit-button');}
 
-    //home why content
+    //why campspot
     whyCampspotTitle() { return cy.get('.home-why-title');}
-    favoriteCampgroundsTitle() { return cy.get('li:nth-of-type(1) > .home-why-list-item-reason');}
-    favoriteCampgroundsDescription() { return cy.get('li:nth-of-type(1) > .home-why-list-item-description');}
-    instantBookingTitle() { return cy.get(':nth-child(2) > .home-why-list-item-reason');}
-    instantBookingDescription() { return cy.get(':nth-child(2) > .home-why-list-item-description');}
-    noMembershipFeeTitle()  { return cy.get("section[class='home-why'] li:nth-child(3) h3:nth-child(1)");}
-    noMembershipFeeDescription()  { return cy.get("body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(3) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(3) > p:nth-child(2)");}
+    campingYourWayTitle() { return cy.get('li:nth-of-type(1) > .home-why-list-item-reason');}
+    campingYourWayDescription() { return cy.get('li:nth-of-type(1) > .home-why-list-item-description');}
+    seriousSavingsTitle() { return cy.get(':nth-child(2) > .home-why-list-item-reason');}
+    seriousSavingsDescription() { return cy.get(':nth-child(2) > .home-why-list-item-description');}
+    weatherProtectionTitle()  { return cy.get("section[class='home-why'] li:nth-child(3) h3:nth-child(1)");}
+    weatherProtectionDescription()  { return cy.get("body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > home:nth-child(2) > main:nth-child(1) > home-winter:nth-child(1) > section:nth-child(3) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(3) > p:nth-child(2)");}
 
     //way to stay
     wayToStayTitle() { return cy.get('.home-categories-title');}
@@ -46,13 +46,13 @@ class HomePagePO {
     adContentImage() { return cy.get('img[src="/assets/img/rvshare-1170x250.jpg"]');}
 
     //popular campgrounds for fall getaways
-    campgroundsForFallTitle() { return cy.get('section:nth-child(5) h2:nth-child(1)');}
-    wildFoxCabins() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1) > div:nth-child(2) > div:nth-child(1)');}
-    wildFoxCabinsLocation() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1) > div:nth-child(2) > div:nth-child(2)');}
-    wildFoxCabinsImage() { return cy.get('img[src="/assets/img/wild-fox-cabins-campground.jpg"]');}
-    yogiBears() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(2) > a:nth-child(1) > div:nth-child(2) > div:nth-child(1)');}
-    yogiBearsLocation() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > search:nth-child(2) > main:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(2) > a:nth-child(1) > div:nth-child(2) > div:nth-child(2)');}
-    yogiBearsImage() { return cy.get('img[src="/assets/img/jellystone-gardiner.jpg"]');}
+    campgroundsForWinterTitle() { return cy.get(':nth-child(7) > .home-most-popular-title');}
+    spaciousSkiesHiddenCreek() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > home:nth-child(2) > main:nth-child(1) > home-winter:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1) > div:nth-child(2) > div:nth-child(1)');}
+    spaciousSkiesHiddenCreekLocation() { return cy.get('body > app-root:nth-child(2) > div:nth-child(1) > main:nth-child(2) > home:nth-child(2) > main:nth-child(1) > home-winter:nth-child(1) > section:nth-child(7) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1) > div:nth-child(2) > div:nth-child(2)');}
+    spaciousSkiesHiddenCreekImage() { return cy.get('img[src="/assets/img/home/winter/spacious-skies-hidden-creek.jpg"]');}
+    portalRvResort() { return cy.get(':nth-child(7) > .home-most-popular-list > :nth-child(2) > .home-most-popular-list-item-tile > .home-most-popular-list-item-content > .home-most-popular-list-item-name');}
+    portalRvResortLocation() { return cy.get(':nth-child(7) > .home-most-popular-list > :nth-child(2) > .home-most-popular-list-item-tile > .home-most-popular-list-item-content > .home-most-popular-list-item-location');}
+    portalRvResortImage() { return cy.get('img[src="/assets/img/home/winter/portal-rv-resort-campground.jpg"]');}
 
     //sign in menu
 
@@ -64,6 +64,24 @@ class HomePagePO {
     reservations()   { return cy.get('.header-nav-account-dropdown-item.app-payment-methods-nav-link');}
     saved()  { return cy.get('.header-nav-account-dropdown-item.app-saved-nav-link');}
     signInModalCloseIcon() { return cy.get('.account-modal-close-icon');};
+
+    emailAddressSignInTitle()  { return cy.get("label[for='sign-in-email']");};
+    emailAddressSignInValue()   { return cy.get('#sign-in-email');};
+    passwordSignInTitle()   { return cy.get("label[for='sign-in-password']");};
+    passwordSignInValue()   { return cy.get('#sign-in-password');};
+    signInButton()  { return cy.get('.sign-in-submit > div');};
+    signingInAgree() { return cy.get('.sign-in-agree');};
+    signInTermsAndConditions()  { return cy.get('.sign-in-agree > [href="/about/terms-and-conditions"]');};
+    signInPrivacyPolicy()  { return cy.get('.sign-in-agree > [href="/about/privacy"]');};
+    signInFacebookButton()  { return cy.get('.sign-in-social > :nth-child(1)');};
+    signInGoogleButton()  { return cy.get('.sign-in-social > :nth-child(2)');};
+    signInAppleButton()  { return cy.get('.sign-in-social > :nth-child(3)');};
+    dontHaveAnAccount()  { return cy.get('.sign-in-sign-up');};
+    signInSignUp()  { return cy.get('.sign-in-sign-up-link.app-create-account-link');};
+
+
+
+
 
     //create account
     createAccountTitle()  { return cy.get('.create-account-title');}
@@ -80,9 +98,18 @@ class HomePagePO {
     appleButton() { return cy.get('.create-account-social > :nth-child(3)');};
     alreadyHaveAnAccount() { return cy.get('.create-account-sign-in');};
     createAccountSignIn() { return cy.get('.create-account-sign-in-link.app-sign-in-link');};
-    
+    createAccountModalCloseIcon()  { return cy.get('.account-modal-close-icon');};
     
 
+    //welcome to campspot modal
+    accountModalClose() { return cy.get('.account-modal-close-icon');};
+    welcomeConfirmation() { return cy.get('.welcome-confirmation > img');};
+    welcomeToCampspotTitle() { return cy.get('.welcome-title');};
+    welcomeToCampspotText() { return cy.get('.welcome-text');};
+    startExploringButton() { return cy.get('.app-get-started-btn');};
+    goToAccountButton() { return cy.get('.app-my-account-link');};
+
+    
 
 
 }

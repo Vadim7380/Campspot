@@ -37,18 +37,20 @@ describe ('Home Page', ()=>{
       page.guestsValue().should('be.visible');
       page.searchButton().should('be.visible');
 
-      //home why content
+      //why campspot
       page.whyCampspotTitle().should('be.visible');
-      page.favoriteCampgroundsTitle().should('be.visible');
-      page.favoriteCampgroundsTitle().should('contain', ' Your favorite campgrounds');
-      page.favoriteCampgroundsDescription().should('be.visible');
-      page.favoriteCampgroundsDescription().should('contain', 'Campspot lists top-rated camping destinations available for online booking in North America.');
-      page.instantBookingTitle().should('be.visible');
-      page.instantBookingDescription().should('be.visible');
-      page.instantBookingDescription().should('contain', 'No need to call the campground or wait for your booking to be accepted.');
-      page.noMembershipFeeTitle().should('be.visible');
-      page.noMembershipFeeDescription().should('be.visible');
-      page.noMembershipFeeDescription().should('contain', 'Book all listed campgrounds on our app instantly');
+      page.campingYourWayTitle().should('be.visible');
+      page.campingYourWayTitle().should('contain', ' Camping, Your Way');
+      page.campingYourWayDescription().should('be.visible');
+      page.campingYourWayDescription().should('contain', 'From RV resorts to glamping tents to cozy cabins');
+      page.seriousSavingsTitle().should('be.visible');
+      page.seriousSavingsTitle().should('contain', ' Serious Savings');
+      page.seriousSavingsDescription().should('be.visible');
+      page.seriousSavingsDescription().should('contain', 'Campspot is free to use — no membership required.');
+      page.weatherProtectionTitle().should('be.visible');
+      page.weatherProtectionTitle().should('contain', 'Weather Protection');
+      page.weatherProtectionDescription().should('be.visible');
+      page.weatherProtectionDescription().should('contain', 'Add a Sensible Weather Guarantee to any eligible trip');
 
       //way to stay
       page.wayToStayTitle().should('be.visible');
@@ -77,13 +79,14 @@ describe ('Home Page', ()=>{
       page.adContentImage().should('be.visible');
 
       //popular campgrounds for fall getaways
-      page.campgroundsForFallTitle().should('be.visible');
-      page.wildFoxCabins().should('be.visible');
-      page.wildFoxCabinsLocation().should('be.visible');
-      page.wildFoxCabinsImage().should('be.visible');
-      page.yogiBears().should('be.visible');
-      page.yogiBearsLocation().should('be.visible');
-      page.yogiBearsImage().should('be.visible');
+      page.campgroundsForWinterTitle().should('be.visible');
+      page.campgroundsForWinterTitle().should('contain', 'Popular Campgrounds for Winter Getaways');
+      page.spaciousSkiesHiddenCreek().should('be.visible');
+      page.spaciousSkiesHiddenCreekLocation().should('be.visible');
+      page.spaciousSkiesHiddenCreekImage().should('be.visible');
+      page.portalRvResort().should('be.visible');
+      page.portalRvResortLocation().should('be.visible');
+      page.portalRvResortImage().should('be.visible');
 
       //to be continued......
 
@@ -92,10 +95,37 @@ describe ('Home Page', ()=>{
 
     it('Sign in menu', ()=>{
 
+      //sign in modal
       page.signIn().click();
+      page.signInTitle().should('be.visible');
+      page.emailAddressSignInTitle().should('be.visible');
+      page.emailAddressSignInValue().should('be.visible');
+      page.passwordSignInTitle().should('be.visible');
+      page.passwordSignInValue().should('be.visible');
+      page.signInButton().should('be.visible');
+      page.signingInAgree().should('be.visible');
+      page.signingInAgree().should('contain', 'By signing in')
+      page.signInTermsAndConditions().should('be.visible');
+      page.signInTermsAndConditions().invoke('removeAttr', 'target').click()
+      cy.url().should('include', '/about/terms-and-conditions');
+      cy.go('back');
+      page.signIn().click();
+      page.signInPrivacyPolicy().should('be.visible');
+      page.signInPrivacyPolicy().invoke('removeAttr', 'target').click()
+      cy.url().should('include', '/about/privacy');
+      cy.go('back');
+      page.signIn().click();
+      page.signInFacebookButton().should('be.visible');
+      page.signInGoogleButton().should('be.visible');
+      page.signInAppleButton().should('be.visible');
+      page.dontHaveAnAccount().should('be.visible');
+      page.signInSignUp().should('be.visible');
+      page.signInSignUp().click();
+      page.createAccountTitle().should('be.visible');
+      page.createAccountModalCloseIcon().click();
 
-
-
+      //sign in
+      page.signIn().click();
       cy.login(User, Password);
       page.emailLink().should('contain', 'prikhodkovn@gmail.com');
       page.emailLink().click();
@@ -106,11 +136,11 @@ describe ('Home Page', ()=>{
       page.signOut().should('be.visible');
       page.signOut().click();
 
-
     })
 
-    it('Create account', ()=>{
+    it('Create account modal', ()=>{
 
+      //create account modal
       page.createAccount().click();
       page.createAccountTitle().should('be.visible');
       page.emailAddressTitle().should('be.visible');
@@ -139,6 +169,30 @@ describe ('Home Page', ()=>{
       page.signInTitle().should('be.visible');
       page.signInModalCloseIcon().click();
 
+    })
+
+    it('Create account', ()=>{
+
+      // Generate a unique email using a timestamp
+      const timestamp = new Date().getTime();
+      const uniqueEmail = `prikhodkovn+${timestamp}@gmail.com`;
+
+      // Visit the registration page
+      page.createAccount().click();
+      page.emailAddressValue().type(uniqueEmail);
+      page.passwordValue().type('PasswordSuper!+1');
+      page.createAccountButton().click();
+      page.emailLink().should('contain', 'prikhodkovn');
+
+      //welcome to campspot modal
+      page.accountModalClose().should('be.visible');
+      page.welcomeConfirmation().should('be.visible');
+      page.welcomeToCampspotTitle().should('be.visible');
+      page.welcomeToCampspotText().should('be.visible');
+      page.startExploringButton().should('be.visible');
+      page.goToAccountButton().should('be.visible');
+      page.accountModalClose().click();
+    
     })
 
 })
