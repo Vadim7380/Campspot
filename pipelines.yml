@@ -1,3 +1,5 @@
+pool: Azure Pipelines
+
 trigger:
   branches:
     include:
