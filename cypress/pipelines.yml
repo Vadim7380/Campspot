@@ -1,0 +1,23 @@
+trigger:
+  branches:
+    include:
+      - main
+      - development
+
+variables:
+  solution: "**/*.sln"
+  buildConfiguration: "Release"
+
+stages:
+  - stage: main
+    dependsOn: []
+    jobs:
+      - job: jobOne
+        displayName: "nameOne"
+        steps:
+          -script:
+            # Add your build commands or scripts here
+            # For example, if you are building a .NET application:
+            dotnet restore
+            dotnet build
+            dotnet test

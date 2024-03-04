@@ -24,8 +24,24 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login', (username, password) => {
-    cy.get('#sign-in-email').type(username);
-    cy.get('#sign-in-password').type(password);
-    cy.get('.sign-in-submit > div').click();
+// Cypress.Commands.add('login', (username, password) => {
+//     cy.get('#sign-in-email').type(username);
+//     cy.get('#sign-in-password').type(password);
+//     cy.get('.sign-in-submit > div').click();
+//   });
+
+
+Cypress.Commands.add('login', () => {
+    cy.request({
+      method: 'POST',
+      url: 'https://www.campspot.com/api/gator-core/users/sign-in',
+      body: {
+        user: {
+          password: 'AN53super!',
+          username: 'prikhodkovn@gmail.com',
+        }
+      } 
+    })
+    .its('status')
+    .should('equal', 200);
   });

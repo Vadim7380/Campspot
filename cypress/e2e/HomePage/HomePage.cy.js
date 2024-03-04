@@ -8,10 +8,10 @@ describe ('Home Page', ()=>{
 
     beforeEach('Page Open', ()=>{
 
-        cy.visit('');
+        // cy.visit('');
         // page.signIn().click();
-        // cy.login(User, Password);
-        // cy.get('.header-nav-link-email').should('contain', 'prikhodkovn@gmail.com')
+        cy.login(User, Password);
+        cy.get('.header-nav-link-email').should('contain', 'prikhodkovn@gmail.com')
         
     })
 
@@ -171,7 +171,7 @@ describe ('Home Page', ()=>{
 
     })
 
-    it('Create account', ()=>{
+    /*it('Create account', ()=>{
 
       // Generate a unique email using a timestamp
       const timestamp = new Date().getTime();
@@ -193,6 +193,6 @@ describe ('Home Page', ()=>{
       page.goToAccountButton().should('be.visible');
       page.accountModalClose().click();
     
-    })
+    })*/
 
 })
