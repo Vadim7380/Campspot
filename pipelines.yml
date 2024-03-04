@@ -11,13 +11,11 @@ variables:
   solution: "**/*.sln"
   buildConfiguration: "Release"
 
-stages:
-  - stage: main
-    dependsOn: []
-    jobs:
-      - job: jobOne
-        displayName: "nameOne"
-        steps:
-          - script:
-              dotnet restore
-              dotnet build
+
+jobs:
+  - job: jobOne
+    displayName: "nameOne"
+    steps:
+      - script:
+         dotnet restore
+         dotnet build 
