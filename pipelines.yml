@@ -1,0 +1,21 @@
+pool: 
+  vmImage: 'windows-latest'
+
+trigger:
+  branches:
+    include:
+      - main
+      - development
+
+variables:
+  solution: "**/*.sln"
+  buildConfiguration: "Release"
+
+
+jobs:
+  - job: jobOne
+    displayName: "nameOne"
+    steps:
+      - script:
+         dotnet restore
+         dotnet build 
